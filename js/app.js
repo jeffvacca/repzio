@@ -15,7 +15,7 @@ cc.brgrNav = document.getElementById('burger-nav');
 
 cc.headerH = document.getElementById('nav').offsetHeight;
 cc.topBtn = document.getElementById('btn-top');
-
+cc.windowW = window.innerWidth;
 
 cc.menuToggle = function(e){
 	e.preventDefault();
@@ -28,6 +28,7 @@ cc.srchToggle = function(e){
 	cc.brgrNav.classList.remove('on');
 }
 cc.brgrToggle = function(e){
+	console.log(e.target);
 	e.preventDefault();
 	cc.srchSm.classList.remove('on');
 	cc.brgrNav.classList.toggle('on');
@@ -64,10 +65,13 @@ cc.debounce = function(func, wait = 20, immediate = true) {
     };
 };
 cc.resize = function(){
-	cc.brgrNav.classList.remove('on');
-	cc.srchSm.classList.remove('on');
-	cc.moreMenuWrap.classList.add('hidden');
-	cc.moreMenu.classList.add('pushed');
+	if( cc.windowW != window.innerWidth ){    //WINDOW WIDTH IS CHANGED
+		cc.brgrNav.classList.remove('on');
+		cc.srchSm.classList.remove('on');
+		cc.moreMenuWrap.classList.add('hidden');
+		cc.moreMenu.classList.add('pushed');
+		cc.windowW = window.innerWidth;
+	}
 }
 cc.listeners = function(){
 	cc.more.addEventListener('click', cc.menuToggle);
