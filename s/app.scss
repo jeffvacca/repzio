@@ -36,6 +36,7 @@ $gutter-sm:10px;
 ul,li{list-style-type: none;}
 
 body{font-family: "Gotham A";color:$text-black;}
+.row.banner{max-width: 100%;}
 
 #logo{float: left; width: 86px; height: 85px; overflow: hidden; background: url("../i/loloi_logo120x120.jpg") no-repeat scroll 50% 50%; background-size: cover; margin-bottom: 0; margin-right: 30px; @include transition(opacity .3s ease);
 	&:hover{@include opacity(0.8); }
@@ -214,7 +215,7 @@ body{font-family: "Gotham A";color:$text-black;}
 			ul{display: flex;flex-wrap: nowrap; justify-content:center;align-items: center; min-height: 42px; margin-left: 0; }
 			li{min-width:100px; margin: 0 3px; }
 			a{display: block; min-width: 120px; text-align:center; padding: 8px 10px; border:1px solid #77787b;
-				@include border-radius(3px)
+				@include border-radius(3px);
 				&:hover{color: #414042; border-color: #1f1e21; }
 			}
 		}
